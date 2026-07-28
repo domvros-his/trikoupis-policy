@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#8f3e2e">
+<title>Χαρίλαος Τρικούπης: έργο, πολιτική και κόστος</title>
+<style>
+:root{
+  --brick:#984733;
+  --brick-dark:#5f2a20;
+  --brick-soft:#c4785f;
+  --cream:#f5eddd;
+  --paper:#fffaf0;
+  --ink:#2d2925;
+  --muted:#6d6259;
+  --gold:#c39a58;
+  --sage:#68735d;
+  --line:#dccdb8;
+  --good:#35694d;
+  --warn:#9a6429;
+  --bad:#8a3a32;
+  --shadow:0 12px 30px rgba(76,42,29,.11);
+  --radius:18px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:linear-gradient(180deg,#ede1ce 0,#f7f0e4 22rem,#efe4d4 100%);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans",Arial,sans-serif;line-height:1.6}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+a{color:var(--brick-dark)}
+.skip-link{position:absolute;left:-9999px;top:auto}.skip-link:focus{left:1rem;top:1rem;z-index:1000;background:#fff;padding:.7rem 1rem;border-radius:8px}
+.schoolbar{background:var(--brick-dark);color:#fff;padding:.55rem 1rem;text-align:center;font-weight:750;letter-spacing:.045em;font-size:.88rem}
+.hero{position:relative;overflow:hidden;background:linear-gradient(125deg,rgba(80,31,22,.97),rgba(152,71,51,.93));color:#fff;padding:2.4rem 1rem 2rem;border-bottom:6px solid var(--gold)}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 82% 20%,rgba(255,255,255,.13),transparent 29%),linear-gradient(90deg,transparent 0 72%,rgba(255,255,255,.04) 72% 73%,transparent 73%);pointer-events:none}
+.hero-inner{position:relative;z-index:1;max-width:1180px;margin:auto;display:grid;grid-template-columns:1.4fr .6fr;gap:2rem;align-items:center}
+.eyebrow{font-size:.82rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#f0d5a6;margin:0 0 .55rem}
+h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(2rem,4vw,3.15rem);line-height:1.08;margin:.1rem 0 .7rem;max-width:19ch;font-weight:700}
+.hero p{max-width:66ch;margin:.35rem 0;color:#f9eadf;font-size:1.04rem}
+.hero-symbol{justify-self:end;width:min(240px,90%);aspect-ratio:1;border:1px solid rgba(255,255,255,.28);border-radius:50%;display:grid;place-items:center;position:relative;background:rgba(255,255,255,.06)}
+.hero-symbol::before,.hero-symbol::after{content:"";position:absolute;background:#e5c17f}.hero-symbol::before{width:72%;height:5px;transform:rotate(-8deg)}.hero-symbol::after{height:72%;width:5px;transform:rotate(8deg)}
+.hero-symbol span{background:var(--cream);color:var(--brick-dark);width:88px;height:88px;border-radius:50%;display:grid;place-items:center;font-family:Georgia,serif;font-weight:800;font-size:2.2rem;box-shadow:0 0 0 9px rgba(255,255,255,.13)}
+.toolbar{position:sticky;top:0;z-index:50;background:rgba(255,250,240,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);box-shadow:0 4px 14px rgba(76,42,29,.08)}
+.toolbar-inner{max-width:1180px;margin:auto;padding:.65rem 1rem;display:grid;grid-template-columns:1fr;gap:.55rem}
+.navsteps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.45rem;width:100%;overflow:visible}
+.stepbtn{white-space:normal;min-width:0;min-height:2.8rem;display:flex;align-items:center;justify-content:center;text-align:center;line-height:1.22;border:1px solid var(--line);background:#fffaf3;color:var(--brick-dark);border-radius:12px;padding:.55rem .65rem;font-weight:750;font-size:.87rem}
+.stepbtn:hover{background:#f5e7d9;border-color:var(--brick-soft)}
+.stepbtn.active{background:var(--brick);color:#fff;border-color:var(--brick)}
+.stepbtn.done::before{content:"✓ ";color:var(--good)}.stepbtn.active.done::before{color:#fff}
+.toolbar-actions{display:flex;justify-content:flex-end;align-items:center;gap:.5rem;flex-wrap:wrap;padding-top:.5rem;border-top:1px solid rgba(220,205,184,.8)}
+.toolbtn{border:1px solid var(--brick);background:transparent;color:var(--brick-dark);border-radius:10px;padding:.5rem .7rem;font-weight:750}.toolbtn:hover{background:#f4e0d5}
+.save-status{font-size:.8rem;color:var(--muted);min-width:92px;text-align:right}
+main{max-width:1180px;margin:1.5rem auto 3.5rem;padding:0 1rem}
+.panel{display:none;animation:fade .25s ease}.panel.active{display:block}@keyframes fade{from{opacity:.25;transform:translateY(5px)}to{opacity:1;transform:none}}
+.section-head{background:var(--paper);border:1px solid var(--line);border-left:8px solid var(--brick);border-radius:var(--radius);padding:1.25rem 1.4rem;margin-bottom:1rem;box-shadow:var(--shadow)}
+.section-head h2{font-family:Georgia,serif;font-size:clamp(1.55rem,2.5vw,2.25rem);line-height:1.2;margin:0 0 .35rem;color:var(--brick-dark)}
+.section-head p{margin:.25rem 0;color:var(--muted)}
+.why{margin-top:.8rem;padding:.7rem .85rem;border-radius:12px;background:#f0e2c8;border:1px solid #dfc696;color:#4c3b29}
+.glossary-note{display:flex;align-items:flex-start;gap:.65rem;background:#fff8ea;border:1px solid #dec8a4;border-left:6px solid var(--gold);border-radius:12px;padding:.72rem .9rem;margin:0 0 1rem;color:#4e4033;box-shadow:0 5px 16px rgba(76,42,29,.06)}
+.glossary-note strong{color:var(--brick-dark)}
+.glossary-note .help-mark{flex:0 0 26px;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:var(--brick);color:#fff;font-weight:850;line-height:1}
+.glossary-term{text-decoration-line:underline;text-decoration-style:dotted;text-decoration-thickness:2px;text-underline-offset:3px;text-decoration-color:var(--brick-soft);cursor:help;color:inherit;font-weight:650;border-radius:3px}
+.glossary-term:hover,.glossary-term:focus{background:#f3dfc8;color:var(--brick-dark);outline:none}
+.glossary-term:focus-visible{box-shadow:0 0 0 3px rgba(152,71,51,.2)}
+.term-tooltip{position:fixed;z-index:500;display:none;width:max-content;max-width:min(360px,calc(100vw - 24px));padding:.72rem .82rem;border-radius:10px;background:#2f241f;color:#fff;font-size:.9rem;line-height:1.45;box-shadow:0 12px 30px rgba(0,0,0,.28);pointer-events:none}
+.term-tooltip.show{display:block}
+.guidance-card{border-left:6px solid var(--sage);background:#fbf8ef}
+.guided-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.65rem;list-style:none;counter-reset:guide;margin:.8rem 0;padding:0}
+.guided-steps li{counter-increment:guide;background:#fff;border:1px solid var(--line);border-radius:12px;padding:.75rem .75rem .75rem 2.7rem;position:relative;min-height:92px}
+.guided-steps li::before{content:counter(guide);position:absolute;left:.7rem;top:.7rem;width:1.45rem;height:1.45rem;border-radius:50%;display:grid;place-items:center;background:var(--brick);color:#fff;font-weight:850;font-size:.82rem}
+.sentence-frame{background:#eef0e8;border:1px solid #cbd1c2;border-radius:12px;padding:.8rem .9rem;margin:.7rem 0;color:#3f4739}
+.sentence-frame strong{color:#34432f}
+.grid{display:grid;gap:1rem}.grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}.grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}.grid.four{grid-template-columns:repeat(4,minmax(0,1fr))}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:1.15rem;box-shadow:var(--shadow)}
+.card h3{margin:.05rem 0 .5rem;color:var(--brick-dark);font-size:1.15rem}.card h4{margin:.2rem 0 .4rem;color:var(--brick-dark)}
+.callout{background:#f2e5d2;border:1px solid #ddc7a7;border-radius:14px;padding:1rem}.callout strong{color:var(--brick-dark)}
+.big-question{font-family:Georgia,serif;font-size:clamp(1.25rem,2.3vw,1.75rem);line-height:1.35;color:var(--brick-dark);margin:.4rem 0}
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:.7rem;align-items:stretch;margin:1rem 0}.flow .node{position:relative;background:#fff;border:1px solid var(--line);border-top:5px solid var(--brick-soft);border-radius:14px;padding:.8rem;text-align:center;font-weight:700}.flow .node:not(:last-child)::after{content:"→";position:absolute;right:-.58rem;top:50%;transform:translateY(-50%);z-index:2;color:var(--brick);font-size:1.25rem;background:var(--cream);border-radius:50%}
+label{font-weight:700;color:#4b3c33}.field{margin:.75rem 0}.field small{display:block;color:var(--muted);font-weight:400;margin-top:.2rem}
+input[type=text],input[type=date],select,textarea{width:100%;border:1px solid #cbbba5;background:#fffdfa;color:var(--ink);border-radius:10px;padding:.7rem .78rem;outline:none}textarea{min-height:104px;resize:vertical}input:focus,select:focus,textarea:focus{border-color:var(--brick);box-shadow:0 0 0 3px rgba(152,71,51,.14)}
+.choice-row{display:flex;gap:.55rem;flex-wrap:wrap}.choice{display:flex;align-items:center;gap:.45rem;border:1px solid var(--line);border-radius:12px;padding:.55rem .7rem;background:#fff}.choice input{accent-color:var(--brick)}
+.timeline{position:relative;margin:1rem 0 0;padding-left:1.4rem;border-left:3px solid var(--gold)}.event{position:relative;margin:0 0 1rem;padding:.15rem 0 .15rem .65rem}.event::before{content:"";position:absolute;left:-1.98rem;top:.55rem;width:12px;height:12px;border-radius:50%;background:var(--brick);border:3px solid var(--cream)}.event time{font-weight:850;color:var(--brick-dark);margin-right:.45rem}
+.pillar{border-top:6px solid var(--brick);position:relative;overflow:hidden}.pillar .num{position:absolute;right:.8rem;top:.45rem;font-family:Georgia,serif;font-size:2.6rem;color:rgba(152,71,51,.14);font-weight:800}.pillar ul{padding-left:1.1rem;margin:.4rem 0}.pillar li{margin:.3rem 0}
+.warning{border-left:5px solid var(--warn);background:#fff6e7;padding:.85rem 1rem;border-radius:10px}
+.source-card{padding:0;overflow:hidden}.source-head{background:#f0e1cd;padding:1rem 1.1rem;border-bottom:1px solid var(--line);display:flex;gap:.85rem;align-items:center}.source-letter{flex:0 0 44px;height:44px;border-radius:12px;background:var(--brick);color:#fff;display:grid;place-items:center;font-family:Georgia,serif;font-size:1.35rem;font-weight:800}.source-head h3{margin:0}.source-meta{font-size:.84rem;color:var(--muted)}
+.source-body{padding:1.1rem}.media-frame{background:#261f1b;border-radius:12px;overflow:hidden;margin:.5rem 0 1rem}.media-frame img,.media-frame video{display:block;width:100%;max-height:520px;object-fit:contain;background:#201b18}.caption{font-size:.84rem;color:var(--muted);margin:.4rem 0 .8rem}
+details{border:1px solid var(--line);border-radius:12px;background:#fffdf8;margin:.7rem 0}summary{cursor:pointer;padding:.72rem .85rem;font-weight:800;color:var(--brick-dark)}details>div,details>blockquote{padding:.1rem .9rem .9rem;margin:0}
+.source-text{white-space:pre-line;border-left:4px solid var(--gold);background:#fffdf8;padding:1rem 1.1rem;border-radius:8px;font-family:Georgia,"Times New Roman",serif;font-size:1.01rem;line-height:1.72;max-height:28rem;overflow:auto}
+.tagbox{display:flex;gap:.45rem;flex-wrap:wrap}.tagcheck{font-size:.86rem;border:1px solid var(--line);border-radius:999px;padding:.35rem .58rem;background:#fff}.tagcheck input{accent-color:var(--brick)}
+.source-task{border-top:1px dashed var(--line);margin-top:1rem;padding-top:.9rem}
+.hint{background:#eef0e8;border-left:4px solid var(--sage);padding:.75rem .85rem;border-radius:8px;color:#41483a}
+.compare-wrap{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.voice{padding:0;overflow:hidden}.voice-header{display:grid;grid-template-columns:86px 1fr;gap:1rem;align-items:center;background:#efe1cc;padding:1rem}.voice-header img{width:86px;height:106px;object-fit:cover;border-radius:10px;border:2px solid #fff;box-shadow:0 3px 12px rgba(0,0,0,.15)}.voice-header h3{margin:0}.voice .source-text{margin:1rem}
+.statement-table{width:100%;border-collapse:collapse;background:#fff}.statement-table th,.statement-table td{border:1px solid var(--line);padding:.65rem;vertical-align:top}.statement-table th{background:#ead8bf;color:var(--brick-dark)}.statement-table select{min-width:180px}
+.feedback{display:none;margin-top:.7rem;border-radius:10px;padding:.75rem}.feedback.show{display:block}.feedback.good{background:#e6f2e9;color:#24523a;border:1px solid #a8ccb3}.feedback.bad{background:#fae8e5;color:#713129;border:1px solid #e1aaa4}
+.chain{display:grid;grid-template-columns:1fr 52px 1fr 52px 1fr 52px 1fr;align-items:stretch;gap:.4rem;margin:1rem 0}.chainbox{background:#fff;border:1px solid var(--line);border-radius:12px;padding:.8rem}.arrow{display:grid;place-items:center;color:var(--brick);font-size:1.5rem;font-weight:900}.chainbox strong{display:block;color:var(--brick-dark);font-size:.82rem;text-transform:uppercase;letter-spacing:.04em;margin-bottom:.25rem}
+.quiz-item{padding:.85rem;border:1px solid var(--line);border-radius:12px;background:#fff;margin:.65rem 0}.quiz-item.correct{border-color:#83b394;background:#edf7f0}.quiz-item.incorrect{border-color:#d19890;background:#fff0ee}
+.balance{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.scale-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:1rem}.scale-card input[type=range]{width:100%;accent-color:var(--brick)}.scale-labels{display:flex;justify-content:space-between;color:var(--muted);font-size:.78rem}
+.evidence-builder{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.quality-list{display:grid;gap:.45rem}.quality-list label{font-weight:600;display:flex;gap:.5rem;align-items:flex-start}.quality-list input{accent-color:var(--brick);margin-top:.3rem}
+.nav-bottom{display:flex;justify-content:space-between;gap:1rem;margin:1.4rem 0}.nav-bottom button{border:0;border-radius:12px;padding:.75rem 1rem;font-weight:800}.prev{background:#e7d8c2;color:var(--brick-dark)}.next{background:var(--brick);color:#fff}.next:disabled,.prev:disabled{opacity:.45;cursor:not-allowed}
+.credits-list{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.credit-block{background:#fff;border:1px solid var(--line);border-radius:12px;padding:1rem}.credit-block h4{margin:0 0 .5rem;color:var(--brick-dark)}
+footer{background:var(--brick-dark);color:#f8eadd;padding:1.2rem;text-align:center;font-size:.9rem}
+.only-print{display:none}
+.modal{position:fixed;inset:0;background:rgba(39,26,20,.7);display:none;place-items:center;z-index:200;padding:1rem}.modal.show{display:grid}.modal-card{background:var(--paper);border-radius:18px;max-width:560px;width:100%;padding:1.3rem;box-shadow:0 20px 60px rgba(0,0,0,.3)}.modal-actions{display:flex;justify-content:flex-end;gap:.6rem;margin-top:1rem}.danger{background:var(--bad);color:#fff;border:0;border-radius:10px;padding:.6rem .9rem}.cancel{background:#e8ded0;border:0;border-radius:10px;padding:.6rem .9rem}
+@media(max-width:900px){.hero-inner{grid-template-columns:1fr}.hero-symbol{display:none}.grid.four,.grid.three{grid-template-columns:repeat(2,1fr)}.guided-steps{grid-template-columns:repeat(2,minmax(0,1fr))}.flow{grid-template-columns:1fr}.flow .node:not(:last-child)::after{content:"↓";right:50%;top:auto;bottom:-1rem;transform:translateX(50%)}.compare-wrap,.balance,.evidence-builder,.credits-list{grid-template-columns:1fr}.chain{grid-template-columns:1fr}.arrow{height:32px}.arrow::before{content:"↓"}.arrow{font-size:0}.arrow::before{font-size:1.4rem}.statement-table{display:block;overflow-x:auto}.stepbtn{font-size:.82rem;padding:.5rem .45rem}.toolbar-actions{justify-content:center}}
+@media(max-width:620px){.grid.two,.grid.three,.grid.four,.guided-steps{grid-template-columns:1fr}.schoolbar{font-size:.75rem}.hero{padding-top:1.6rem}h1{font-size:2rem}.toolbar{position:relative}.toolbar-inner{padding:.55rem .7rem}.navsteps{grid-template-columns:repeat(2,minmax(0,1fr));gap:.38rem}.stepbtn{min-height:2.7rem;font-size:.8rem}.stepbtn:last-child:nth-child(odd){grid-column:1/-1}.toolbar-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:100%}.toolbtn{width:100%;padding:.52rem .45rem;font-size:.82rem}.toolbar-actions .toolbtn:last-of-type{grid-column:1/-1}.save-status{display:none}.source-head{align-items:flex-start}.voice-header{grid-template-columns:70px 1fr}.voice-header img{width:70px;height:90px}.section-head,.card{border-radius:14px}.source-text{font-size:.96rem;max-height:24rem}}
+@media print{
+  body{background:#fff;font-size:10.5pt}.schoolbar,.toolbar,.nav-bottom,.toolbtn,.modal,video,.no-print{display:none!important}.hero{background:#fff;color:#000;border-bottom:2px solid #777;padding:1rem 0}.hero p,.eyebrow{color:#333}.hero-symbol{display:none}main{max-width:none;margin:0;padding:0}.panel{display:block!important;page-break-before:always;animation:none}.panel:first-of-type{page-break-before:auto}.section-head,.card{box-shadow:none;border-color:#999;background:#fff;break-inside:avoid}.source-text{max-height:none;overflow:visible;font-size:9.3pt}.only-print{display:block}.media-frame img{max-height:300px}.source-card,.voice,.quiz-item,.chain{break-inside:avoid}.glossary-note,.term-tooltip{display:none!important}.glossary-term{text-decoration:none;background:transparent!important;color:inherit!important;font-weight:inherit}footer{background:#fff;color:#000;border-top:1px solid #777}.choice-row,.tagbox{gap:.2rem}textarea,input[type=text],input[type=date],select{border:0;border-bottom:1px solid #999;border-radius:0;background:transparent;box-shadow:none}.source-task details{display:none}}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Μετάβαση στο κύριο περιεχόμενο</a>
+<div class="schoolbar">ΙΣΤΟΡΙΑ Γ΄ ΓΥΜΝΑΣΙΟΥ – 1ο ΓΥΜΝΑΣΙΟ ΠΥΛΑΙΑΣ</div>
+<header class="hero">
+  <div class="hero-inner">
+    <div>
+      <p class="eyebrow">Εργαστήριο ιστορικής διερεύνησης</p>
+      <h1>Χαρίλαος Τρικούπης: έργο, πολιτική και κόστος</h1>
+      <p>Μελετούμε ένα συνολικό σχέδιο εκσυγχρονισμού: κοινοβουλευτική λειτουργία, κράτος, υποδομές, οικονομία, άμυνα και κοινωνικές συνέπειες.</p>
+    </div>
+    <div class="hero-symbol" aria-hidden="true"><span>ΧΤ</span></div>
+  </div>
+</header>
+<nav class="toolbar" aria-label="Πλοήγηση δραστηριότητας">
+  <div class="toolbar-inner">
+    <div class="navsteps" id="navsteps"></div>
+    <div class="toolbar-actions" aria-label="Εργαλεία εφαρμογής">
+      <button class="toolbtn" type="button" id="printBtn">Εκτύπωση / PDF</button>
+      <button class="toolbtn" type="button" id="exportBtn">Αρχείο απαντήσεων</button>
+      <button class="toolbtn" type="button" id="resetBtn">Αρχικοποίηση</button>
+      <span class="save-status" id="saveStatus">Αποθηκεύτηκε</span>
+    </div>
+  </div>
+</nav>
+<main id="main">
+  <div class="glossary-note no-print" aria-label="Βοήθεια για δύσκολους όρους"><span class="help-mark" aria-hidden="true">;</span><div><strong>Βοήθεια όρων:</strong> Οι λέξεις με διακεκομμένη υπογράμμιση έχουν σύντομη εξήγηση. Πέρασε τον δείκτη επάνω τους ή επίλεξέ τες με το πληκτρολόγιο. Σε κινητό ή τάμπλετ, πάτησέ τες.</div></div>
+
+<section class="panel active" data-title="Αφετηρία" id="step-0">
+  <div class="section-head">
+    <h2>Αφετηρία: ποιο είναι το ιστορικό ερώτημα;</h2>
+    <p>Δεν αναζητούμε έναν «ήρωα» ή έναν «ένοχο». Εξετάζουμε τι επιδίωξε μια πολιτική, με ποια μέσα εφαρμόστηκε, τι άλλαξε και ποιο ήταν το κόστος.</p>
+    <div class="why"><strong>Γιατί κάνουμε αυτό το βήμα;</strong> Το ίδιο τεκμήριο μπορεί να είναι πολύ χρήσιμο για ένα ερώτημα και λιγότερο χρήσιμο για ένα άλλο. Πρώτα ορίζουμε τι ακριβώς θέλουμε να μάθουμε.</div>
+  </div>
+  <div class="grid two">
+    <article class="card">
+      <h3>Το κεντρικό ερώτημα</h3>
+      <p class="big-question">Πώς επιχείρησε ο Χαρίλαος Τρικούπης να εκσυγχρονίσει την Ελλάδα και ποιες ήταν οι θετικές και οι αρνητικές συνέπειες της πολιτικής του;</p>
+      <div class="callout"><strong>Θα εξετάσεις:</strong> στόχους · πολιτικές επιλογές · έργα · χρηματοδότηση · κοινωνικές αντιδράσεις · αποτελέσματα · όρια.</div>
+    </article>
+    <article class="card">
+      <h3>Στοιχεία μαθητή / ομάδας</h3>
+      <div class="field"><label for="studentName">Ονοματεπώνυμο ή ομάδα</label><input data-save id="studentName" type="text" placeholder="π.χ. Ομάδα 3"></div>
+      <div class="grid two">
+        <div class="field"><label for="studentClass">Τμήμα</label><input data-save id="studentClass" type="text" placeholder="π.χ. Γ4"></div>
+        <div class="field"><label for="studentDate">Ημερομηνία</label><input data-save id="studentDate" type="date"></div>
+      </div>
+    </article>
+  </div>
+  <article class="card">
+    <h3>Ο τρόπος σκέψης μας</h3>
+    <div class="flow" aria-label="Πέντε στάδια ιστορικής σκέψης">
+      <div class="node">Πρόβλημα ή ανάγκη</div><div class="node">Πολιτική επιλογή</div><div class="node">Έργο ή μεταρρύθμιση</div><div class="node">Αποτέλεσμα</div><div class="node">Κόστος και όρια</div>
+    </div>
+    <p>Σε κάθε επόμενο βήμα θα επιστρέφεις σε αυτή την αλυσίδα. Έτσι θα αποφύγεις τον απλό κατάλογο έργων.</p>
+  </article>
+  <div class="grid two">
+    <article class="card">
+      <h3>Η πρώτη σου υπόθεση</h3>
+      <p>Πριν δεις τις πηγές, ποια θέση θεωρείς πιο πιθανή;</p>
+      <div class="choice-row">
+        <label class="choice"><input data-save type="radio" name="initialHypothesis" value="success"> Κυρίως επιτυχής εκσυγχρονισμός</label>
+        <label class="choice"><input data-save type="radio" name="initialHypothesis" value="mixed"> Σημαντικό έργο με βαρύ κόστος</label>
+        <label class="choice"><input data-save type="radio" name="initialHypothesis" value="failure"> Κυρίως αποτυχημένη πολιτική</label>
+        <label class="choice"><input data-save type="radio" name="initialHypothesis" value="unsure"> Δεν έχω ακόμη στοιχεία</label>
+      </div>
+      <div class="field"><label for="initialReason">Γιατί το υποθέτεις;</label><textarea data-save id="initialReason" placeholder="Γράψε 1–2 προτάσεις. Δεν χρειάζεται να είναι σωστές· θα τις ξαναδείς στο τέλος."></textarea></div>
+    </article>
+    <article class="card">
+      <h3>Σύντομος χρονικός προσανατολισμός</h3>
+      <div class="timeline">
+        <div class="event"><time>1874</time>Δημοσιεύεται το άρθρο «Τις πταίει;».</div>
+        <div class="event"><time>1875</time>Καθιερώνεται ως κοινοβουλευτική πρακτική η αρχή της δεδηλωμένης.</div>
+        <div class="event"><time>1882–1895</time>Κορυφώνεται η προσπάθεια εκσυγχρονισμού με διακοπές και εναλλαγές κυβερνήσεων.</div>
+        <div class="event"><time>1890</time>Ο Γκαστόν Ντεσάν καταγράφει την εικόνα της πολιτικής και της καθημερινότητας.</div>
+        <div class="event"><time>1893</time>Το ελληνικό κράτος δηλώνει αδυναμία εξυπηρέτησης του δημόσιου χρέους.</div>
+        <div class="event"><time>1895</time>Ο Τρικούπης ηττάται εκλογικά· πεθαίνει το 1896.</div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="panel" data-title="Το πολιτικό σχέδιο" id="step-1">
+  <div class="section-head">
+    <h2>Το πολιτικό σχέδιο: τέσσερις αλληλένδετοι άξονες</h2>
+    <p>Τα έργα υποδομής ήταν μόνο ένα μέρος της πολιτικής του Τρικούπη. Μελέτησε τους τέσσερις άξονες ως μέρη ενός ενιαίου σχεδίου.</p>
+    <div class="why"><strong>Γιατί κάνουμε αυτό το βήμα;</strong> Για να συνδέσουμε τα ορατά έργα με τις πολιτικές αποφάσεις που τα στήριξαν και με τους στόχους που υπηρετούσαν.</div>
+  </div>
+  <article class="card guidance-card">
+    <h3>Πώς θα εργαστείς σε αυτό το στάδιο</h3>
+    <ol class="guided-steps">
+      <li><strong>Διάβασε</strong> τους τέσσερις άξονες. Δεν χρειάζεται να απομνημονεύσεις τις πληροφορίες.</li>
+      <li><strong>Βρες τον στόχο</strong> κάθε άξονα: ποιο πρόβλημα προσπαθούσε να αντιμετωπίσει;</li>
+      <li><strong>Διάλεξε δύο άξονες</strong> που επηρεάζουν ο ένας τον άλλο.</li>
+      <li><strong>Εξήγησε τη σύνδεση</strong> με μία αιτία, ένα αποτέλεσμα και, όπου υπάρχει, ένα κόστος.</li>
+    </ol>
+    <div class="sentence-frame"><strong>Παράδειγμα τρόπου σκέψης:</strong> Οι υποδομές χρειάζονταν χρηματοδότηση. Ο εξωτερικός δανεισμός επέτρεψε να αρχίσουν γρηγορότερα έργα, αλλά αύξησε το δημόσιο χρέος.</div>
+  </article>
+  <div class="grid four">
+    <article class="card pillar"><span class="num">1</span><h3>Κοινοβουλευτισμός και κράτος</h3><ul><li>Αρχή της δεδηλωμένης και κυβερνήσεις με κοινοβουλευτική πλειοψηφία.</li><li>Προσπάθεια σταθερότερης πολιτικής λειτουργίας.</li><li>Επιδίωξη αποτελεσματικότερης διοίκησης και περιορισμού πελατειακών πρακτικών.</li></ul><p><strong>Ερώτημα:</strong> Άλλαξαν οι κανόνες ή και η πραγματική πολιτική συμπεριφορά;</p></article>
+    <article class="card pillar"><span class="num">2</span><h3>Υποδομές και παραγωγή</h3><ul><li>Δρόμοι, σιδηρόδρομοι και λιμάνια.</li><li>Διώρυγα της Κορίνθου και αποξηραντικά έργα.</li><li>Σύνδεση αγορών, πόλεων και παραγωγικών περιοχών.</li></ul><p><strong>Ερώτημα:</strong> Ποια έργα άλλαξαν άμεσα την καθημερινότητα και ποια χρειάζονταν χρόνο;</p></article>
+    <article class="card pillar"><span class="num">3</span><h3>Οικονομία και χρηματοδότηση</h3><ul><li>Εξωτερικός δανεισμός για γρήγορη ανάπτυξη.</li><li>Αύξηση φορολογικών και τελωνειακών εσόδων.</li><li>Μεγάλη πίεση στα δημόσια οικονομικά.</li></ul><p><strong>Ερώτημα:</strong> Πότε ένας δανεισμός είναι επένδυση και πότε γίνεται μη βιώσιμο βάρος;</p></article>
+    <article class="card pillar"><span class="num">4</span><h3>Άμυνα και εθνική ισχύς</h3><ul><li>Αναδιοργάνωση στρατού και στόλου.</li><li>Επιδίωξη ισχυρότερου κράτους σε μια ασταθή περιοχή.</li><li>Υψηλές δαπάνες, όχι πάντοτε άμεσα παραγωγικές.</li></ul><p><strong>Ερώτημα:</strong> Πώς συνδέεται η εθνική στρατηγική με την οικονομική αντοχή;</p></article>
+  </div>
+  <article class="card">
+    <h3>Προσοχή στην ιστορική απόδοση</h3>
+    <p class="warning"><strong>Ο Τρικούπης δεν «κατασκεύασε μόνος του» τα έργα.</strong> Κυβερνήσεις, Βουλή, δημόσιες υπηρεσίες, ιδιωτικές εταιρείες, μηχανικοί, εργάτες, επενδυτές και τοπικές κοινωνίες συμμετείχαν. Εξετάζουμε τον πολιτικό σχεδιασμό και το πλαίσιο που διαμόρφωσαν οι κυβερνήσεις του, χωρίς να εξαφανίζουμε τους άλλους συντελεστές.</p>
+    <div class="grid two">
+      <div class="field"><label for="axisOne">Πρώτος άξονας</label><select data-save id="axisOne"><option value="">Επίλεξε</option><option>Κοινοβουλευτισμός και κράτος</option><option>Υποδομές και παραγωγή</option><option>Οικονομία και χρηματοδότηση</option><option>Άμυνα και εθνική ισχύς</option></select></div>
+      <div class="field"><label for="axisTwo">Δεύτερος άξονας</label><select data-save id="axisTwo"><option value="">Επίλεξε</option><option>Κοινοβουλευτισμός και κράτος</option><option>Υποδομές και παραγωγή</option><option>Οικονομία και χρηματοδότηση</option><option>Άμυνα και εθνική ισχύς</option></select></div>
+    </div>
+    <div class="field"><label for="planConnection">Εξήγησε με 2–3 προτάσεις πώς συνδέονται οι δύο άξονες.</label><textarea data-save id="planConnection" placeholder="Μπορείς να αρχίσεις: Ο πρώτος άξονας συνδέεται με τον δεύτερο, επειδή… Αυτό είχε ως αποτέλεσμα… Ωστόσο…"></textarea><small>Δεν αρκεί να γράψεις ότι «συνδέονται». Εξήγησε τι προκαλεί τι και ποιο όφελος ή κόστος προκύπτει.</small></div>
+  </article>
+</section>
+
+<section class="panel" data-title="Φάκελος πηγών" id="step-2">
+  <div class="section-head">
+    <h2>Φάκελος πηγών: τι μπορεί να μας πει κάθε τεκμήριο;</h2>
+    <p>Μελέτησε και τις έξι πηγές. Δεν χρειάζεται κάθε πηγή να απαντά σε όλα. Σημείωσε ποια πλευρά φωτίζει και ποιο συγκεκριμένο στοιχείο κρατάς.</p>
+    <div class="why"><strong>Γιατί κάνουμε αυτό το βήμα;</strong> Η χρησιμότητα μιας πηγής εξαρτάται από το ερώτημά μας. Επειδή τώρα εξετάζουμε και την πολιτική και τις συνέπειές της, πηγές που ήταν «λίγο σχετικές» με έναν κατάλογο έργων μπορεί να είναι πολύ χρήσιμες για την κοινωνική αποτίμηση.</div>
+  </div>
+  <article class="card guidance-card">
+    <h3>Για κάθε πηγή κάνε τα ίδια τέσσερα απλά βήματα</h3>
+    <ol class="guided-steps">
+      <li><strong>Παρατήρησε ή διάβασε</strong> την πηγή χωρίς να γράψεις ακόμη απάντηση.</li>
+      <li><strong>Επίλεξε 1–2 πλευρές</strong> που φωτίζει καλύτερα: έργα, οικονομία, καθημερινότητα, πολιτική ή κόστος.</li>
+      <li><strong>Κρίνε τη χρησιμότητά της</strong> για το κεντρικό ερώτημα. Μια πηγή μπορεί να είναι χρήσιμη, ακόμη κι αν δεν δίνει όλες τις πληροφορίες.</li>
+      <li><strong>Κράτησε ένα συγκεκριμένο στοιχείο</strong>: κάτι ακριβές που είδες, άκουσες ή διάβασες.</li>
+    </ol>
+    <div class="sentence-frame"><strong>Χρήσιμη αρχή πρότασης:</strong> «Η πηγή είναι χρήσιμη για να καταλάβω…, επειδή δείχνει ή αναφέρει ότι…». Απόφυγε γενικές απαντήσεις όπως «μιλά για τον Τρικούπη».</div>
+  </article>
+
+  <div class="grid two">
+    <article class="card source-card">
+      <div class="source-head"><div class="source-letter">Α</div><div><h3>Οπτικοακουστική αφήγηση</h3><div class="source-meta">Δευτερογενής οπτικοακουστική πηγή · ΕΡΤ, 1983</div></div></div>
+      <div class="source-body">
+        <div class="media-frame"><video controls preload="metadata" poster="assets/video_poster.jpg"><source src="assets/eksygxronistika_erga_ert.mp4" type="video/mp4">Το πρόγραμμα περιήγησης δεν υποστηρίζει το βίντεο.</video></div>
+        <p class="caption">«Εκσυγχρονιστικά έργα» (2΄01΄), από την εκπομπή <em>Ιστορία γραμμένη με νότες: Βράκα και φουστανέλα</em>, ΕΡΤ, 1983.</p>
+        <details><summary>Τι προσφέρει η πηγή;</summary><div>Παρουσιάζει με λεπτομέρειες αλλαγές στη ζωή των Ελλήνων στο τέλος του 19ου αιώνα και κάνει άμεση αναφορά σε μεγάλα έργα και υποδομές.</div></details>
+        <div class="source-task" data-source="A"><h4>Η δική σου ανάγνωση</h4><div class="tagbox">
+          <label class="tagcheck"><input data-save type="checkbox" name="Aangle" value="infrastructure"> Υποδομές</label><label class="tagcheck"><input data-save type="checkbox" name="Aangle" value="economy"> Οικονομία</label><label class="tagcheck"><input data-save type="checkbox" name="Aangle" value="daily"> Καθημερινότητα</label><label class="tagcheck"><input data-save type="checkbox" name="Aangle" value="politics"> Πολιτική</label><label class="tagcheck"><input data-save type="checkbox" name="Aangle" value="cost"> Κόστος</label>
+        </div><div class="field"><label for="Ause">Χρησιμότητα για το κεντρικό ερώτημα</label><select data-save id="Ause"><option value="">Επίλεξε</option><option>Πολύ χρήσιμη</option><option>Χρήσιμη με όρια</option><option>Περιορισμένη</option></select></div><div class="field"><label for="Aevidence">Συγκεκριμένο στοιχείο που κρατώ</label><textarea data-save id="Aevidence"></textarea></div></div>
+      </div>
+    </article>
+
+    <article class="card source-card">
+      <div class="source-head"><div class="source-letter">Β</div><div><h3>Η Τερψιθέα του Πειραιά</h3><div class="source-meta">Οπτική πηγή · έργο του Β. Χατζή</div></div></div>
+      <div class="source-body">
+        <div class="media-frame"><img src="assets/terpsithea_peiraia.jpg" alt="Η Τερψιθέα του Πειραιά με τραμ, στύλους ηλεκτρικού και δημόσιο χώρο"></div>
+        <p class="caption">Αθήνα, Εθνική Πινακοθήκη – Μουσείο Αλεξάνδρου Σούτσου. Αναφορά: Β. Τσοκόπουλος, <em>Μεγάλα τεχνικά έργα στην Ελλάδα</em>, 1999, σ. 13.</p>
+        <details><summary>Τι να παρατηρήσεις;</summary><div>Ατμήλατο τραμ, λάμπες φωταερίου, στύλους μεταφοράς ηλεκτρικού ρεύματος, οργανωμένο δημόσιο χώρο και κίνηση ανθρώπων.</div></details>
+        <div class="source-task" data-source="B"><h4>Η δική σου ανάγνωση</h4><div class="tagbox">
+          <label class="tagcheck"><input data-save type="checkbox" name="Bangle" value="infrastructure"> Υποδομές</label><label class="tagcheck"><input data-save type="checkbox" name="Bangle" value="economy"> Οικονομία</label><label class="tagcheck"><input data-save type="checkbox" name="Bangle" value="daily"> Καθημερινότητα</label><label class="tagcheck"><input data-save type="checkbox" name="Bangle" value="politics"> Πολιτική</label><label class="tagcheck"><input data-save type="checkbox" name="Bangle" value="cost"> Κόστος</label>
+        </div><div class="field"><label for="Buse">Χρησιμότητα για το κεντρικό ερώτημα</label><select data-save id="Buse"><option value="">Επίλεξε</option><option>Πολύ χρήσιμη</option><option>Χρήσιμη με όρια</option><option>Περιορισμένη</option></select></div><div class="field"><label for="Bevidence">Συγκεκριμένο στοιχείο που κρατώ</label><textarea data-save id="Bevidence"></textarea></div></div>
+      </div>
+    </article>
+
+    <article class="card source-card">
+      <div class="source-head"><div class="source-letter">Γ</div><div><h3>Κεντρικός δρόμος του Βόλου</h3><div class="source-meta">Επιστολικό δελτάριο, αρχές 20ού αιώνα · ΕΛΙΑ</div></div></div>
+      <div class="source-body">
+        <div class="media-frame"><img src="assets/volos_dimitriados.jpg" alt="Κεντρική οδός Δημητριάδος στον Βόλο με σιδηρόδρομο"></div>
+        <p class="caption">Χ. Χατζηιωσήφ (επιμ.), <em>Ιστορία της Ελλάδας του 20ού αιώνα. Οι απαρχές 1900–1922</em>, 1999, τ. Α΄1, σ. 177.</p>
+        <details><summary>Τι προσφέρει και τι δεν προσφέρει;</summary><div>Δείχνει τον σιδηρόδρομο να διασχίζει την πόλη και τη σχέση υποδομής–καθημερινότητας. Δεν μας πληροφορεί από μόνη της για τη χρηματοδότηση, τη λήψη αποφάσεων ή τα υπόλοιπα έργα.</div></details>
+        <div class="source-task" data-source="C"><h4>Η δική σου ανάγνωση</h4><div class="tagbox">
+          <label class="tagcheck"><input data-save type="checkbox" name="Cangle" value="infrastructure"> Υποδομές</label><label class="tagcheck"><input data-save type="checkbox" name="Cangle" value="economy"> Οικονομία</label><label class="tagcheck"><input data-save type="checkbox" name="Cangle" value="daily"> Καθημερινότητα</label><label class="tagcheck"><input data-save type="checkbox" name="Cangle" value="politics"> Πολιτική</label><label class="tagcheck"><input data-save type="checkbox" name="Cangle" value="cost"> Κόστος</label>
+        </div><div class="field"><label for="Cuse">Χρησιμότητα για το κεντρικό ερώτημα</label><select data-save id="Cuse"><option value="">Επίλεξε</option><option>Πολύ χρήσιμη</option><option>Χρήσιμη με όρια</option><option>Περιορισμένη</option></select></div><div class="field"><label for="Cevidence">Συγκεκριμένο στοιχείο που κρατώ</label><textarea data-save id="Cevidence"></textarea></div></div>
+      </div>
+    </article>
+
+    <article class="card source-card">
+      <div class="source-head"><div class="source-letter">Δ</div><div><h3>Η τεχνολογία αλλάζει τη χώρα</h3><div class="source-meta">Ιστοριογραφικό κείμενο · Β. Τσοκόπουλος, 1999</div></div></div>
+      <div class="source-body">
+        <details open><summary>Πλήρες κείμενο της πηγής</summary><blockquote class="source-text">«Ο 19ος αιώνας και ιδιαίτερα οι τρεις τελευταίες δεκαετίες του αποτέλεσαν για την Ελλάδα μια εποχή ριζικών αλλαγών, αισθητών και στην καθημερινή ζωή των ανθρώπων. Πέρα από το μέγιστο γεγονός της ίδρυσης και της οργάνωσης του ελληνικού κράτους, το οποίο, σταδιακά αλλά σταθερά, ενέτασσε στις λειτουργίες του όσους βρίσκονταν μέσα στα διαρκώς εκτεινόμενα όριά του, ο άνθρωπος της Ελλάδας του 19ου αιώνα ήρθε σε επαφή με τα αποτελέσματα της βιομηχανικής επανάστασης, δηλαδή με ορισμένα πρωτοφανή γι’ αυτόν φαινόμενα, αντικείμενα και έννοιες. Το γεγονός ότι αυτά συνυπήρξαν για ένα μεγάλο διάστημα με τις κληρονομιές της οθωμανικής κοινωνίας έκανε την αντίθεση πιο έκδηλη. Έτσι, πλάι στο χάνι εμφανίστηκε το ξενοδοχείο, μαζί με τις συνήθειές του και συχνά τη νέα κουζίνα του· πλάι στη βιοτεχνία και τη χειροτεχνία, το ατμοκίνητο εργοστάσιο· πλάι στον ταρσανά, το ναυπηγείο· πλάι στο ιστιοφόρο, το ατμόπλοιο· πλάι στον αραμπά και στο κάρο, ο σιδηρόδρομος· πλάι στο κερί και τον λύχνο, το φωταέριο και ο ηλεκτρισμός: τα ζεύγη αυτά αντιπροσωπεύουν κάτι πολύ περισσότερο από απλές λεκτικές μετατοπίσεις. Πρόκειται για την εισβολή ενός νέου τρόπου ζωής, ο οποίος στηρίζεται κατά το μεγαλύτερο μέρος του στην εξέλιξη της τεχνολογίας. Πολύ περισσότερο που, με την αποξήρανση της Κωπαΐδας και την τομή του Ισθμού της Κορίνθου, αυτή η τεχνολογία έδειχνε να μπορεί να τροποποιήσει ακόμα και τη φύση, να την προσαρμόσει στις ανάγκες του ανθρώπου.»
+
+Τσοκόπουλος Β., <em>Μεγάλα τεχνικά έργα στην Ελλάδα: τέλη 19ου–αρχές 20ού αιώνα</em>, Καστανιώτης, Αθήνα 1999, σ. 15–16.</blockquote></details>
+        <div class="source-task" data-source="D"><h4>Η δική σου ανάγνωση</h4><div class="tagbox">
+          <label class="tagcheck"><input data-save type="checkbox" name="Dangle" value="infrastructure"> Υποδομές</label><label class="tagcheck"><input data-save type="checkbox" name="Dangle" value="economy"> Οικονομία</label><label class="tagcheck"><input data-save type="checkbox" name="Dangle" value="daily"> Καθημερινότητα</label><label class="tagcheck"><input data-save type="checkbox" name="Dangle" value="politics"> Πολιτική</label><label class="tagcheck"><input data-save type="checkbox" name="Dangle" value="cost"> Κόστος</label>
+        </div><div class="field"><label for="Duse">Χρησιμότητα για το κεντρικό ερώτημα</label><select data-save id="Duse"><option value="">Επίλεξε</option><option>Πολύ χρήσιμη</option><option>Χρήσιμη με όρια</option><option>Περιορισμένη</option></select></div><div class="field"><label for="Devidence">Συγκεκριμένο στοιχείο που κρατώ</label><textarea data-save id="Devidence"></textarea></div></div>
+      </div>
+    </article>
+
+    <article class="card source-card">
+      <div class="source-head"><div class="source-letter">Ε</div><div><h3>Καθυστερήσεις και ανεκπλήρωτες ανάγκες</h3><div class="source-meta">Πολιτικό–νομοθετικό κείμενο · Εμμ. Ρέπουλης, 1912</div></div></div>
+      <div class="source-body">
+        <details open><summary>Πλήρες κείμενο της πηγής</summary><blockquote class="source-text">«Πράγματι η Πολιτεία ημών καθυστέρησεν εις την παροχήν τοιούτου φωτός. Ούτε η αναγκαία εις τους γεωργικούς πληθυσμούς θεωρητική και πρακτική διδασκαλία προς βελτίωσιν και των οικονομικών και των τεχνικών όρων της παραγωγής, κατά τας υπαγορεύσεις της επιστήμης εγένετο, ούτε τα αναγκαία δημόσια έργα προς επικουρίαν των γεωργικών πληθυσμών εξετελέσθησαν, ούτε έργα διευθετήσεως ποταμών και χειμάρρων, και έργα αρδεύσεως, και έργα αποξηράνσεως ελών και εξυγιάνσεως συνετελέσθησαν όσα απαιτούσιν αι ανάγκαι του τόπου, ούτε επιστημονική διδασκαλία εις την καλλιέργειαν της γης, την δενδροκομίαν, την οπωροκομίαν, την κηπουρικήν, και εις την κτηνοτροφίαν και γαλακτοκομίαν και πτηνοτροφίαν και μελισσοκομίαν και σηροτροφίαν εγένετο η αναγκαία και κατά τρόπον σκόπιμον και αποτελεσματικόν.»
+
+Ρέπουλης Εμμ., <em>Μελέτη μετά σχεδίου νόμου περί μεταναστεύσεως</em>, Αθήναι 1912, σ. 47.</blockquote></details>
+        <div class="hint"><strong>Καθοδήγηση:</strong> Το κείμενο είναι μεταγενέστερο. Δεν απαριθμεί τα επιτεύγματα του Τρικούπη· μας βοηθά να ελέγξουμε αν ο εκσυγχρονισμός κάλυψε όλες τις ανάγκες και όλες τις κοινωνικές ομάδες.</div>
+        <div class="source-task" data-source="E"><h4>Η δική σου ανάγνωση</h4><div class="tagbox">
+          <label class="tagcheck"><input data-save type="checkbox" name="Eangle" value="infrastructure"> Υποδομές</label><label class="tagcheck"><input data-save type="checkbox" name="Eangle" value="economy"> Οικονομία</label><label class="tagcheck"><input data-save type="checkbox" name="Eangle" value="daily"> Καθημερινότητα</label><label class="tagcheck"><input data-save type="checkbox" name="Eangle" value="politics"> Πολιτική</label><label class="tagcheck"><input data-save type="checkbox" name="Eangle" value="cost"> Όρια / ελλείψεις</label>
+        </div><div class="field"><label for="Euse">Χρησιμότητα για το κεντρικό ερώτημα</label><select data-save id="Euse"><option value="">Επίλεξε</option><option>Πολύ χρήσιμη</option><option>Χρήσιμη με όρια</option><option>Περιορισμένη</option></select></div><div class="field"><label for="Eevidence">Συγκεκριμένο στοιχείο που κρατώ</label><textarea data-save id="Eevidence"></textarea></div></div>
+      </div>
+    </article>
+
+    <article class="card source-card">
+      <div class="source-head"><div class="source-letter">ΣΤ</div><div><h3>Εργασία, τεχνολογία και κοινωνική ένταση</h3><div class="source-meta">Ιστοριογραφικό κείμενο · Χ. Αγριαντώνη, 2003</div></div></div>
+      <div class="source-body">
+        <details open><summary>Πλήρες κείμενο της πηγής</summary><blockquote class="source-text">«Εργατικές κινητοποιήσεις ασφαλώς υπήρξαν, σποραδικές και ασυντόνιστες, συνήθως χωρίς συνέχεια, συχνά με διαφορετικό περιεχόμενο και στόχευση. Έτσι, ως πρώτη στην ελληνική ιστορία απεργία έχει καταγραφεί (αλλά δεν έχει μελετηθεί) η απεργία των εργατών του ναυπηγείου και των βυρσοδεψών της Ερμούπολης στα 1879, μια απεργία που ξεκίνησε με αφορμή τη νομισματική διαταραχή και τον εκπεσμό των ημερομισθίων αλλά που πιθανότατα εκφράζει την απόγνωση των ειδικευμένων τεχνιτών της πόλης μπροστά στην απαξίωση των ειδικεύσεών τους, που προκαλούσε η τεχνολογική αλλαγή. Στις αρχές της δεκαετίας του 1880, μαρτυρούνται μερικές απεργίες επίσης ειδικευμένων τεχνιτών της Αθήνας (τυπογράφοι) ενώ διαδοχικές απεργίες εντοπίζονται στο Λαύριο σε όλη [την] περίοδο, εκεί που υπήρχαν και οι σημαντικότερες εργατικές συγκεντρώσεις. Τις απεργίες αυτές τις πυροδοτούσαν οι επίπονες συνθήκες εργασίας και τα συχνά ατυχήματα. Κορυφώθηκαν στην απεργία του 1896, που υπήρξε μαζική, κράτησε 15 ημέρες και τελικά κατεστάλη από τη χωροφυλακή και το ιππικό.»
+
+Αγριαντώνη Χ., «Η ελληνική οικονομία. Η συγκρότηση του ελληνικού καπιταλισμού, 1871–1909», στο Β. Παναγιωτόπουλος (επιμ.), <em>Ιστορία του Νέου Ελληνισμού 1770–2000</em>, τ. 5, Ελληνικά Γράμματα, Αθήνα 2003, σ. 62.</blockquote></details>
+        <div class="hint"><strong>Καθοδήγηση:</strong> Δεν απαντά στο «ποια έργα έγιναν». Απαντά όμως στο «πώς οι οικονομικές και τεχνολογικές αλλαγές επηρέασαν εργαζομένους και κοινωνικές σχέσεις».</div>
+        <div class="source-task" data-source="F"><h4>Η δική σου ανάγνωση</h4><div class="tagbox">
+          <label class="tagcheck"><input data-save type="checkbox" name="Fangle" value="infrastructure"> Υποδομές</label><label class="tagcheck"><input data-save type="checkbox" name="Fangle" value="economy"> Οικονομία</label><label class="tagcheck"><input data-save type="checkbox" name="Fangle" value="daily"> Κοινωνία / εργασία</label><label class="tagcheck"><input data-save type="checkbox" name="Fangle" value="politics"> Πολιτική</label><label class="tagcheck"><input data-save type="checkbox" name="Fangle" value="cost"> Κόστος / συγκρούσεις</label>
+        </div><div class="field"><label for="Fuse">Χρησιμότητα για το κεντρικό ερώτημα</label><select data-save id="Fuse"><option value="">Επίλεξε</option><option>Πολύ χρήσιμη</option><option>Χρήσιμη με όρια</option><option>Περιορισμένη</option></select></div><div class="field"><label for="Fevidence">Συγκεκριμένο στοιχείο που κρατώ</label><textarea data-save id="Fevidence"></textarea></div></div>
+      </div>
+    </article>
+  </div>
+  <article class="card">
+    <h3>Μικρή σύνθεση του φακέλου</h3>
+    <div class="grid two"><div class="field"><label for="bestWorksSource">Ποια πηγή είναι ισχυρότερη για τα έργα και γιατί;</label><textarea data-save id="bestWorksSource"></textarea></div><div class="field"><label for="bestCostSource">Ποια πηγή είναι ισχυρότερη για τα όρια ή το κοινωνικό κόστος και γιατί;</label><textarea data-save id="bestCostSource"></textarea></div></div>
+  </article>
+</section>
+
+<section class="panel" data-title="Δύο φωνές" id="step-3">
+  <div class="section-head">
+    <h2>Δύο φωνές για την πολιτική του Τρικούπη</h2>
+    <p>Σύγκρινε μια μεταγενέστερη ιστορική σύνθεση με μια μαρτυρία ανθρώπου που παρατήρησε την Ελλάδα το 1890. Αναζήτησε κοινές, συμπληρωματικές και διαφορετικές πληροφορίες.</p>
+    <div class="why"><strong>Γιατί κάνουμε αυτό το βήμα;</strong> Οι πηγές δεν «μιλούν» με μία φωνή. Ο χρόνος συγγραφής, το είδος του κειμένου και το ενδιαφέρον του συγγραφέα επηρεάζουν όσα τονίζει.</div>
+  </div>
+  <div class="compare-wrap">
+    <article class="card voice">
+      <div class="voice-header"><img src="assets/despotopoulos.jpg" alt="Αλέξανδρος Ι. Δεσποτόπουλος"><div><h3>Αλέξανδρος Ι. Δεσποτόπουλος</h3><div class="source-meta">Ιστορική σύνθεση, 1977 · βλέμμα εκ των υστέρων</div></div></div>
+      <blockquote class="source-text">«Από το 1882 ως το 1895 εκδηλώθηκε η ανορθωτική προσπάθεια του Χαρίλαου Τρικούπη, με κύριους στόχους: τον εκσυγχρονισμό και την ισχυροποίηση του κράτους· την αναδιοργάνωση και σοβαρή ενίσχυση του στρατού και του στόλου· την ταχύρρυθμη ανάπτυξη της οικονομίας της χώρας, ιδίως της βιομηχανίας και των συγκοινωνιών. Η μεγαλεπήβολη αυτή πολιτική υπαγορεύθηκε από την επιδίωξη να αποκτήσει η Ελλάς έγκαιρα την απαιτούμενη ισχύ, ώστε να μπορεί να επιτύχει την ικανοποίηση των εθνικών δικαίων. Ο τρόπος όμως εφαρμογής της πολιτικής αυτής, υπαγορευμένος από το σύντονο ρυθμό της, περιείχε στοιχεία υπονομευτικά της επιτυχίας της. Η χρηματοδότησή της έγινε με υπερδανεισμό και με υπερφορολόγηση, που μάλιστα έπληξε τις οικονομικά ασθενέστερες τάξεις. Η υπερφορολόγηση αυτή και ακόμη άλλα επαχθή για το λαό οικονομικά μέτρα προκάλεσαν έντονη λαϊκή δυσφορία, με αποτέλεσμα να ηττηθεί ο Τρικούπης επανειλημμένα στις βουλευτικές εκλογές και να διακόπτεται η εφαρμογή της πολιτικής του. Ο υπερδανεισμός, εξάλλου, για την κάλυψη μάλιστα δαπανών μη παραγωγικών είτε μη άμεσα παραγωγικών, αλλά και οι μεγάλες έκτακτες δαπάνες για την επιστράτευση του 1885/1886, δημιούργησαν οξεία δημοσιονομική και γενικότερη οικονομική κρίση, ιδίως από το 1890. Η Ελλάς οδηγήθηκε τελικά στην πτώχευση του 1893, πλήγμα βαρύτατο για τη χώρα, με συνέπειες πολλαπλά επιζήμιες. Ωστόσο, η ανορθωτική προσπάθεια του Τρικούπη άφησε σπουδαία επιτεύγματα, όπως προπάντων η διώρυγα της Κορίνθου, οι σιδηρόδρομοι, οι νέοι δρόμοι, εγγειοβελτιωτικά και άλλα τεχνικά έργα, η ανάπτυξη της βιομηχανίας, αν και σε βαθμό μικρότερο από όσο αναμενόταν, όπως επίσης η ενίσχυση των ενόπλων δυνάμεων της χώρας με τη λήψη πολλών θετικών μέτρων.»
+
+Δεσποτόπουλος Α., «Εισαγωγή», <em>Ιστορία του Ελληνικού Έθνους</em>, Εκδοτική Αθηνών, Αθήνα 1977, τ. ΙΔ΄, σ. 5.</blockquote>
+    </article>
+    <article class="card voice">
+      <div class="voice-header"><img src="assets/deschamps.jpg" alt="Γκαστόν Ντεσάν"><div><h3>Γκαστόν Ντεσάν</h3><div class="source-meta">Ταξιδιωτική μαρτυρία, 1890 · σύγχρονος παρατηρητής</div></div></div>
+      <blockquote class="source-text">«Εδώ και μερικά χρόνια, η πολιτική ιστορία της Ελλάδας περιορίζεται σε ένα είδος εναλλαγής ανάμεσα στα κόμματα του Τρικούπη και του Δηλιγιάννη.
+
+Ο κ. Τρικούπης, που έχει διατελέσει πολλές φορές πρωθυπουργός, είναι ένας ψυχρός, λιγομίλητος, εργατικός άνθρωπος, Έλληνας στην καταγωγή και στην ψυχή, Άγγλος στη μόρφωση, τη συμπεριφορά και την εμφάνιση. Οι αμερόληπτοι συμφωνούν ότι είναι χωρίς αμφιβολία ο πιο αξιόλογος άντρας της σύγχρονης Ελλάδας. Οι ίδιοι οι εχθροί του τιμούν το ζήλο και την εργατικότητά του.
+
+Η αντιπάθεια που τρέφουν γι’ αυτόν κάποιοι συμπατριώτες του οφείλεται σε πολλά γενικά αίτια, που είναι εύκολο να εντοπιστούν. Οι μορφωμένοι Έλληνες, αυτοί που γνωρίζουν την επιθυμία του να ευεργετεί, το πάθος του για εργασία, την αφοσίωσή του στα κοινά, του δίνουν εκ των προτέρων τις ψήφους τους. Δε συμβαίνει όμως το ίδιο με τη λαϊκή τάξη, που είναι και η πιο πολυάριθμη. Για εθνικές αναγκαιότητες, που ο λαός δεν καταλαβαίνει καθόλου, οι φόροι, επί κυβερνήσεως του κ. Τρικούπη, ήταν πολύ βαρείς: το κρασί ήταν ακριβό, το πετρέλαιο ήταν ακριβό, τα τελωνειακά τέλη ανέβαζαν ασταμάτητα τις τιμές των προϊόντων καθημερινής κατανάλωσης, υπήρχε νομισματική κρίση. Γιατί, σε όλες τις χώρες του κόσμου, ο μέσος άνθρωπος ανάγει λιγάκι την πολιτική σε ζήτημα κατσαρόλας.»
+
+Deschamps G., <em>Η Ελλάδα σήμερα. Οδοιπορικό 1890, ο κόσμος του Χαρίλαου Τρικούπη</em>, μτφρ. Α. Δαούτη, Τροχαλία, Αθήνα 1992, σ. 93–94.</blockquote>
+    </article>
+  </div>
+  <article class="card">
+    <h3>Δοκιμή διάκρισης πληροφοριών</h3>
+    <p>Για κάθε πρόταση επίλεξε πού συναντάται. Έπειτα πάτησε «Έλεγχος».</p>
+    <div style="overflow-x:auto"><table class="statement-table"><thead><tr><th>Πληροφορία</th><th>Κατάταξη</th></tr></thead><tbody>
+      <tr><td>Η βαριά φορολογία επιβάρυνε ιδιαίτερα λαϊκά ή οικονομικά ασθενέστερα στρώματα.</td><td><select data-save class="compare-answer" data-correct="both"><option value="">Επίλεξε</option><option value="both">Κοινή και στα δύο</option><option value="d">Μόνο στον Δεσποτόπουλο</option><option value="g">Μόνο στον Ντεσάν</option><option value="different">Διαφορετική / αντιστικτική προσέγγιση</option></select></td></tr>
+      <tr><td>Ο υπερδανεισμός και οι στρατιωτικές δαπάνες συνδέονται με την κρίση και την πτώχευση.</td><td><select data-save class="compare-answer" data-correct="d"><option value="">Επίλεξε</option><option value="both">Κοινή και στα δύο</option><option value="d">Μόνο στον Δεσποτόπουλο</option><option value="g">Μόνο στον Ντεσάν</option><option value="different">Διαφορετική / αντιστικτική προσέγγιση</option></select></td></tr>
+      <tr><td>Ο Τρικούπης παρουσιάζεται ως εργατικός και αφοσιωμένος στα κοινά.</td><td><select data-save class="compare-answer" data-correct="g"><option value="">Επίλεξε</option><option value="both">Κοινή και στα δύο</option><option value="d">Μόνο στον Δεσποτόπουλο</option><option value="g">Μόνο στον Ντεσάν</option><option value="different">Διαφορετική / αντιστικτική προσέγγιση</option></select></td></tr>
+      <tr><td>Η πολιτική στόχευε στην ισχυροποίηση του κράτους, της οικονομίας και των ενόπλων δυνάμεων.</td><td><select data-save class="compare-answer" data-correct="d"><option value="">Επίλεξε</option><option value="both">Κοινή και στα δύο</option><option value="d">Μόνο στον Δεσποτόπουλο</option><option value="g">Μόνο στον Ντεσάν</option><option value="different">Διαφορετική / αντιστικτική προσέγγιση</option></select></td></tr>
+      <tr><td>Η πολιτική κρίση γίνεται αντιληπτή κυρίως μέσα από το κόστος βασικών προϊόντων στην καθημερινή ζωή.</td><td><select data-save class="compare-answer" data-correct="g"><option value="">Επίλεξε</option><option value="both">Κοινή και στα δύο</option><option value="d">Μόνο στον Δεσποτόπουλο</option><option value="g">Μόνο στον Ντεσάν</option><option value="different">Διαφορετική / αντιστικτική προσέγγιση</option></select></td></tr>
+    </tbody></table></div>
+    <button class="next" type="button" id="checkCompare">Έλεγχος</button><div class="feedback" id="compareFeedback"></div>
+  </article>
+  <div class="grid three">
+    <article class="card"><h3>Κοινές πληροφορίες</h3><div class="field"><label for="commonInfo">Τι υποστηρίζουν και οι δύο;</label><textarea data-save id="commonInfo" placeholder="Γράψε 2 κοινά σημεία με δικά σου λόγια."></textarea></div></article>
+    <article class="card"><h3>Συμπληρωματικές πληροφορίες</h3><div class="field"><label for="extraInfo">Τι μαθαίνουμε μόνο από τον καθένα;</label><textarea data-save id="extraInfo" placeholder="Δεσποτόπουλος: … / Ντεσάν: …"></textarea></div></article>
+    <article class="card"><h3>Διαφορά οπτικής</h3><div class="field"><label for="perspectiveInfo">Πού στρέφει το βλέμμα του κάθε συγγραφέας;</label><textarea data-save id="perspectiveInfo" placeholder="Ο ιστορικός του 1977 τονίζει… Ο παρατηρητής του 1890 εστιάζει…"></textarea></div></article>
+  </div>
+</section>
+
+<section class="panel" data-title="Αιτία και συνέπεια" id="step-4">
+  <div class="section-head">
+    <h2>Από την επιλογή στη συνέπεια</h2>
+    <p>Μελέτησε τις έτοιμες αλυσίδες και χρησιμοποίησέ τες για να απαντήσεις στις ερωτήσεις που ακολουθούν. Παρατήρησε ότι η ίδια πολιτική μπορεί να παράγει ταυτόχρονα όφελος και κόστος.</p>
+    <div class="why"><strong>Γιατί κάνουμε αυτό το βήμα;</strong> Για να μην θεωρήσουμε ότι η πτώχευση «ακυρώνει» αυτομάτως όλα τα έργα ή ότι τα έργα «δικαιολογούν» αυτομάτως κάθε οικονομική επιλογή.</div>
+  </div>
+  <article class="card">
+    <h3>Τέσσερις έτοιμες αλυσίδες πολιτικής</h3>
+    <div class="chain"><div class="chainbox"><strong>Ανάγκη</strong>Αργές μετακινήσεις και κατακερματισμένες αγορές</div><div class="arrow">→</div><div class="chainbox"><strong>Επιλογή</strong>Δρόμοι, σιδηρόδρομοι, λιμάνια</div><div class="arrow">→</div><div class="chainbox"><strong>Πιθανό όφελος</strong>Ταχύτερη κυκλοφορία ανθρώπων και προϊόντων</div><div class="arrow">→</div><div class="chainbox"><strong>Κόστος / όριο</strong>Μεγάλη επένδυση, δάνεια και άνισα άμεσα οφέλη</div></div>
+    <div class="chain"><div class="chainbox"><strong>Ανάγκη</strong>Κυβερνητική αστάθεια και παρεμβάσεις του Στέμματος</div><div class="arrow">→</div><div class="chainbox"><strong>Επιλογή</strong>Αρχή της δεδηλωμένης</div><div class="arrow">→</div><div class="chainbox"><strong>Πιθανό όφελος</strong>Ισχυρότερη κοινοβουλευτική νομιμοποίηση</div><div class="arrow">→</div><div class="chainbox"><strong>Κόστος / όριο</strong>Δεν εξαφανίζονται αυτόματα πελατειακές σχέσεις και κομματικές συγκρούσεις</div></div>
+    <div class="chain"><div class="chainbox"><strong>Ανάγκη</strong>Εθνική ασφάλεια και διεθνής ισχύς</div><div class="arrow">→</div><div class="chainbox"><strong>Επιλογή</strong>Ενίσχυση στρατού και στόλου</div><div class="arrow">→</div><div class="chainbox"><strong>Πιθανό όφελος</strong>Καλύτερη οργάνωση και προετοιμασία</div><div class="arrow">→</div><div class="chainbox"><strong>Κόστος / όριο</strong>Υψηλές δαπάνες χωρίς άμεση παραγωγική απόδοση</div></div>
+    <div class="chain"><div class="chainbox"><strong>Ανάγκη</strong>Γρήγορη χρηματοδότηση ενός φιλόδοξου προγράμματος</div><div class="arrow">→</div><div class="chainbox"><strong>Επιλογή</strong>Εξωτερικός δανεισμός και αυξημένη φορολογία</div><div class="arrow">→</div><div class="chainbox"><strong>Πιθανό όφελος</strong>Έργα νωρίτερα από ό,τι επέτρεπαν τα τρέχοντα έσοδα</div><div class="arrow">→</div><div class="chainbox"><strong>Κόστος / όριο</strong>Χρέος, ακρίβεια, κοινωνική δυσαρέσκεια και δημοσιονομική κρίση</div></div>
+  </article>
+  <article class="card">
+    <h3>Γρήγορος έλεγχος κατανόησης</h3>
+    <div class="quiz-item" data-answer="b"><p><strong>1.</strong> Ποια πρόταση αποδίδει καλύτερα τη σχέση έργων και δανεισμού;</p><select data-save class="quiz-select"><option value="">Επίλεξε</option><option value="a">Κάθε δάνειο είναι από μόνο του αποτυχία.</option><option value="b">Ο δανεισμός επέτρεψε ταχύτερα έργα, αλλά δημιούργησε σοβαρό κίνδυνο όταν το χρέος και οι δαπάνες ξεπέρασαν τις δυνατότητες του κράτους.</option><option value="c">Τα έργα δεν είχαν καμία σχέση με τα δημόσια οικονομικά.</option></select></div>
+    <div class="quiz-item" data-answer="c"><p><strong>2.</strong> Τι μας επιτρέπει να δούμε καλύτερα ο Ντεσάν;</p><select data-save class="quiz-select"><option value="">Επίλεξε</option><option value="a">Τον πλήρη προϋπολογισμό όλων των έργων.</option><option value="b">Τη μεταγενέστερη συνολική αξιολόγηση της πτώχευσης.</option><option value="c">Πώς η φορολογία και η ακρίβεια γίνονταν αντιληπτές στην καθημερινή ζωή.</option></select></div>
+    <div class="quiz-item" data-answer="a"><p><strong>3.</strong> Γιατί η πηγή για τις εργατικές κινητοποιήσεις είναι χρήσιμη στη νέα εφαρμογή;</p><select data-save class="quiz-select"><option value="">Επίλεξε</option><option value="a">Επειδή φωτίζει κοινωνικές συνέπειες της οικονομικής και τεχνολογικής αλλαγής.</option><option value="b">Επειδή αποδεικνύει ότι όλες οι απεργίες οργανώθηκαν από τον Τρικούπη.</option><option value="c">Επειδή απαριθμεί όλα τα δημόσια έργα.</option></select></div>
+    <button class="next" type="button" id="checkQuiz">Έλεγχος απαντήσεων</button><div class="feedback" id="quizFeedback"></div>
+  </article>
+  <article class="card">
+    <h3>Η δική σου αιτιώδης εξήγηση</h3>
+    <div class="field"><label for="causalWriting">Συμπλήρωσε: «Η πολιτική του Τρικούπη μπορούσε να εκσυγχρονίζει τη χώρα και ταυτόχρονα να προκαλεί αντιδράσεις, επειδή…»</label><textarea data-save id="causalWriting"></textarea></div>
+  </article>
+</section>
+
+<section class="panel" data-title="Ιστορική κρίση" id="step-5">
+  <div class="section-head">
+    <h2>Ιστορική κρίση: τι μένει από το σχέδιο του Τρικούπη;</h2>
+    <p>Τώρα διατύπωσε μια ισορροπημένη απάντηση. Μια ισχυρή ιστορική κρίση αναγνωρίζει τα επιτεύγματα, το κόστος, τα όρια των πηγών και ένα πιθανό αντεπιχείρημα.</p>
+    <div class="why"><strong>Γιατί κάνουμε αυτό το βήμα;</strong> Η ιστορική αποτίμηση δεν είναι προσωπική συμπάθεια ή αντιπάθεια. Είναι ισχυρισμός που στηρίζεται σε συγκεκριμένα τεκμήρια και εξηγεί τη σύνδεσή τους.</div>
+  </div>
+  <div class="balance">
+    <article class="scale-card"><h3>Συμβολή στον εκσυγχρονισμό</h3><input data-save id="modernScore" type="range" min="0" max="4" step="1" value="2"><div class="scale-labels"><span>Μικρή</span><span>Μέτρια</span><span>Μεγάλη</span></div><p id="modernScoreText">Επίλεξε και αιτιολόγησε παρακάτω.</p></article>
+    <article class="scale-card"><h3>Οικονομικό και κοινωνικό κόστος</h3><input data-save id="costScore" type="range" min="0" max="4" step="1" value="2"><div class="scale-labels"><span>Μικρό</span><span>Μέτριο</span><span>Μεγάλο</span></div><p id="costScoreText">Επίλεξε και αιτιολόγησε παρακάτω.</p></article>
+  </div>
+  <article class="card">
+    <h3>Δόμησε την τελική απάντηση</h3>
+    <div class="field"><label for="finalClaim">1. Ισχυρισμός</label><select data-save id="finalClaim"><option value="">Επίλεξε ή διατύπωσε τη θέση σου στα επόμενα πεδία</option><option>Η πολιτική του Τρικούπη αποτέλεσε κυρίως επιτυχή τομή εκσυγχρονισμού.</option><option>Η πολιτική του Τρικούπη άφησε σημαντικές υποδομές και θεσμικές αλλαγές, αλλά εφαρμόστηκε με οικονομικό και κοινωνικό κόστος που υπονόμευσε τη βιωσιμότητά της.</option><option>Η πτώχευση και η λαϊκή επιβάρυνση υπερίσχυσαν των θετικών αποτελεσμάτων.</option><option>Η αποτίμηση πρέπει να διακρίνει τους μακροπρόθεσμους στόχους από τα άμεσα αποτελέσματα και να μην αποδίδει τα πάντα σε ένα μόνο πρόσωπο.</option></select></div>
+    <div class="evidence-builder">
+      <div class="field"><label for="evidenceOne">2. Τεκμήριο 1</label><textarea data-save id="evidenceOne" placeholder="Ονόμασε την πηγή και γράψε το συγκεκριμένο στοιχείο που χρησιμοποιείς."></textarea></div>
+      <div class="field"><label for="evidenceTwo">3. Τεκμήριο 2 από διαφορετικό είδος πηγής</label><textarea data-save id="evidenceTwo" placeholder="Π.χ. μία οπτική πηγή και ένα ιστοριογραφικό κείμενο."></textarea></div>
+      <div class="field"><label for="reasoning">4. Συλλογισμός</label><textarea data-save id="reasoning" placeholder="Εξήγησε πώς τα τεκμήρια στηρίζουν τον ισχυρισμό σου. Μην τα επαναλάβεις απλώς."></textarea></div>
+      <div class="field"><label for="counterargument">5. Αντεπιχείρημα και απάντηση</label><textarea data-save id="counterargument" placeholder="Κάποιος θα μπορούσε να υποστηρίξει ότι… Ωστόσο…"></textarea></div>
+    </div>
+    <div class="field"><label for="finalResponse">6. Τελικό κείμενο (120–180 λέξεις)</label><textarea data-save id="finalResponse" style="min-height:220px" placeholder="Σύνθεσε εδώ την ολοκληρωμένη ιστορική σου αποτίμηση."></textarea><small id="wordCount">0 λέξεις</small></div>
+  </article>
+  <div class="grid two">
+    <article class="card"><h3>Έλεγχος ποιότητας</h3><div class="quality-list">
+      <label><input data-save type="checkbox" id="q1"> Απαντώ στο κεντρικό ερώτημα και όχι μόνο σε ένα μέρος του.</label>
+      <label><input data-save type="checkbox" id="q2"> Χρησιμοποιώ τουλάχιστον δύο συγκεκριμένα τεκμήρια.</label>
+      <label><input data-save type="checkbox" id="q3"> Αναφέρω έργα ή μεταρρυθμίσεις και όχι μόνο γενικές κρίσεις.</label>
+      <label><input data-save type="checkbox" id="q4"> Εξηγώ τη χρηματοδότηση ή το κοινωνικό κόστος.</label>
+      <label><input data-save type="checkbox" id="q5"> Αναγνωρίζω ένα όριο ή μια διαφορετική οπτική.</label>
+    </div><button class="next" type="button" id="checkCompleteness">Έλεγχος πληρότητας</button><div class="feedback" id="completenessFeedback"></div></article>
+    <article class="card"><h3>Επιστροφή στην πρώτη υπόθεση</h3><div class="field"><label for="hypothesisReview">Άλλαξε η αρχική σου άποψη;</label><select data-save id="hypothesisReview"><option value="">Επίλεξε</option><option>Άλλαξε σημαντικά</option><option>Άλλαξε λίγο</option><option>Παρέμεινε ίδια αλλά τώρα τεκμηριώνεται καλύτερα</option><option>Δεν μπορώ ακόμη να αποφασίσω</option></select></div><div class="field"><label for="reflection">Τι σε έκανε να την αλλάξεις ή να την κρατήσεις;</label><textarea data-save id="reflection"></textarea></div></article>
+  </div>
+  <article class="card only-print"><h3>Στοιχεία εργασίας</h3><p>Ονοματεπώνυμο / Ομάδα: <span id="printName"></span> · Τμήμα: <span id="printClass"></span> · Ημερομηνία: <span id="printDate"></span></p></article>
+</section>
+
+<section class="panel" data-title="Συντελεστές" id="step-6">
+  <div class="section-head">
+    <h2>Συντελεστές, προέλευση και άδεια</h2>
+    <p>Η νέα εφαρμογή συνδυάζει και διαφοροποιεί δύο μαθησιακά αντικείμενα του Φωτόδεντρου, διατηρώντας τα τεκμήρια και αναγνωρίζοντας τη συμβολή των αρχικών δημιουργών.</p>
+  </div>
+  <div class="credits-list">
+    <article class="credit-block"><h4>Αρχικό μαθησιακό υλικό</h4><p><strong>«Ιστορικά ερωτήματα και πηγές – Η χρησιμότητα ιστορικών πηγών για τα εκσυγχρονιστικά έργα»</strong><br><strong>«Η επεξεργασία των ιστορικών πληροφοριών – Η πολιτική του Χαρίλαου Τρικούπη»</strong></p><p>Αποθετήριο προέλευσης: Φωτόδεντρο Μαθησιακά Αντικείμενα (LOR) · Εκδότης και χορηγός άδειας: ΙΤΥΕ «ΔΙΟΦΑΝΤΟΣ».</p></article>
+    <article class="credit-block"><h4>Συντελεστές αρχικού υλικού</h4><p><strong>Χαρά (Χαρίκλεια) Ανδρεάδου:</strong> υπεύθυνη περιεχομένου, μέλος ομάδας παιδαγωγικού σχεδιασμού.<br><strong>Ιωάννης (Γιάννης) Κασκαμανίδης:</strong> μέλος παιδαγωγικού σχεδιασμού, υπεύθυνος τεχνικού σχεδιασμού και τεχνικής υλοποίησης.<br><strong>Αιμιλία Σαλβάνου:</strong> υπεύθυνη περιεχομένου, ειδήμων γνωστικού αντικειμένου.<br><strong>Αρμόδιος Τσιβάς:</strong> συντονιστής ομάδας σχεδιασμού και ανάπτυξης, επιστημονικός υπεύθυνος παιδαγωγικού σχεδιασμού.</p></article>
+    <article class="credit-block"><h4>Νέα εφαρμογή</h4><p><strong>Σύνθεση υλικού, διαφοροποίηση, νέα παιδαγωγική σύλληψη, σχεδιασμός μαθησιακής ροής και ανάπτυξη εφαρμογής:</strong><br>Παναγιώτης Δόμβρος, Εκπαιδευτικός-Θεατρολόγος-Επιμορφωτής ΤΠΕ, Διευθυντής 1ου Γυμνασίου Πυλαίας.</p><p>Η νέα εφαρμογή αποτελεί αυτοτελή επανασχεδιασμό: μετατοπίζει το ερώτημα από την απλή αναγνώριση έργων στη συνολική διερεύνηση πολιτικών στόχων, μέσων, αποτελεσμάτων και κόστους.</p></article>
+    <article class="credit-block"><h4>Άδεια και βιβλιογραφική ευθύνη</h4><p>Το παράγωγο υλικό διατίθεται με άδεια <strong>Creative Commons Αναφορά Δημιουργού – Μη Εμπορική Χρήση – Παρόμοια Διανομή 4.0</strong> (CC BY-NC-SA 4.0), σύμφωνα με την άδεια των αντικειμένων προέλευσης.</p><p>Τα πλήρη αποσπάσματα συνοδεύονται από τις βιβλιογραφικές αναφορές που περιλαμβάνονταν στο αρχικό υλικό. Οι σύντομες επεξηγήσεις, οι ερωτήσεις και οι συνδέσεις αποτελούν νέο διδακτικό σχεδιασμό.</p></article>
+  </div>
+</section>
+
+<div class="nav-bottom"><button type="button" class="prev" id="prevBtn">← Προηγούμενο</button><button type="button" class="next" id="nextBtn">Επόμενο →</button></div>
+</main>
+<footer>Παναγιώτης Δόμβρος, Εκπαιδευτικός-Θεατρολόγος-Επιμορφωτής ΤΠΕ, Διευθυντής 1ου Γυμνασίου Πυλαίας</footer>
+
+<div class="modal" id="resetModal" role="dialog" aria-modal="true" aria-labelledby="resetTitle"><div class="modal-card"><h2 id="resetTitle">Αρχικοποίηση εφαρμογής</h2><p>Θα διαγραφούν όλες οι αποθηκευμένες απαντήσεις και η πρόοδος από αυτή τη συσκευή. Η ενέργεια δεν αναιρείται.</p><div class="modal-actions"><button class="cancel" type="button" id="cancelReset">Ακύρωση</button><button class="danger" type="button" id="confirmReset">Διαγραφή και αρχή</button></div></div></div>
+<div class="term-tooltip" id="termTooltip" role="tooltip" aria-hidden="true"></div>
+
+<script>
+(() => {
+  'use strict';
+  const STORAGE_KEY='trikoupis_policy_app_v1';
+  const panels=[...document.querySelectorAll('.panel')];
+  const nav=document.getElementById('navsteps');
+  const state={step:0,values:{},completed:[]};
+  let saveTimer;
+
+  const glossary={
+    'αρχή της δεδηλωμένης':'Ο βασιλιάς όφειλε να διορίζει κυβέρνηση που είχε την υποστήριξη της πλειοψηφίας των βουλευτών.',
+    'κοινοβουλευτική πλειοψηφία':'Οι περισσότεροι βουλευτές της Βουλής στηρίζουν μια κυβέρνηση ή μια πρόταση.',
+    'κοινοβουλευτική νομιμοποίηση':'Η κυβέρνηση θεωρείται πολιτικά αποδεκτή επειδή στηρίζεται από την πλειοψηφία της Βουλής.',
+    'κοινοβουλευτισμός':'Πολιτικό σύστημα στο οποίο η κυβέρνηση εξαρτάται από την εμπιστοσύνη της Βουλής.',
+    'πελατειακών πρακτικών':'Πρακτικές στις οποίες ένας πολιτικός προσφέρει διορισμούς ή εξυπηρετήσεις για να κερδίσει πολιτική υποστήριξη.',
+    'πελατειακές σχέσεις':'Σχέσεις ανταλλαγής πολιτικής υποστήριξης με προσωπικές εξυπηρετήσεις, διορισμούς ή άλλα οφέλη.',
+    'στέμματος':'Του βασιλιά και της βασιλικής εξουσίας.',
+    'εκσυγχρονισμός':'Προσπάθεια να οργανωθούν το κράτος, η οικονομία και οι υποδομές με νεότερους τρόπους.',
+    'μεταρρύθμιση':'Σχεδιασμένη αλλαγή σε θεσμούς, νόμους ή στη λειτουργία του κράτους.',
+    'μεταρρυθμίσεις':'Σχεδιασμένες αλλαγές σε θεσμούς, νόμους ή στη λειτουργία του κράτους.',
+    'υποδομές':'Βασικά έργα και δίκτυα που χρειάζεται μια χώρα, όπως δρόμοι, λιμάνια, σιδηρόδρομοι και τηλεπικοινωνίες.',
+    'εξωτερικός δανεισμός':'Χρήματα που δανείζεται το κράτος από δανειστές ή αγορές του εξωτερικού και πρέπει να επιστρέψει με τόκο.',
+    'δημόσιο χρέος':'Το συνολικό ποσό που οφείλει το κράτος στους δανειστές του.',
+    'δημόσιου χρέους':'Του συνολικού ποσού που οφείλει το κράτος στους δανειστές του.',
+    'εξυπηρέτησης του δημόσιου χρέους':'Πληρωμής των τόκων και των δόσεων των κρατικών δανείων.',
+    'τελωνειακών εσόδων':'Χρημάτων που εισπράττει το κράτος από φόρους σε προϊόντα που εισάγονται ή εξάγονται.',
+    'δημόσια οικονομικά':'Τα έσοδα, τα έξοδα, τα δάνεια και τα χρέη του κράτους.',
+    'μη βιώσιμο βάρος':'Οικονομική υποχρέωση που δεν μπορεί να συνεχίσει να πληρώνεται για μεγάλο διάστημα.',
+    'εθνική στρατηγική':'Το γενικό σχέδιο ενός κράτους για την ασφάλεια, τη θέση και τους στόχους του απέναντι σε άλλα κράτη.',
+    'εθνική ισχύς':'Η δυνατότητα ενός κράτους να προστατεύει τα συμφέροντά του με οικονομικά, πολιτικά και στρατιωτικά μέσα.',
+    'οικονομική αντοχή':'Η δυνατότητα της οικονομίας και του κράτους να καλύπτουν δαπάνες και δυσκολίες χωρίς να καταρρεύσουν.',
+    'δευτερογενής οπτικοακουστική πηγή':'Μεταγενέστερη αφήγηση που χρησιμοποιεί εικόνα και ήχο για να παρουσιάσει ή να ερμηνεύσει το παρελθόν.',
+    'δευτερογενής πηγή':'Κείμενο ή έργο που δημιουργήθηκε αργότερα και ερμηνεύει το παρελθόν με βάση άλλες πηγές.',
+    'πρωτογενής πηγή':'Τεκμήριο που δημιουργήθηκε την εποχή που μελετούμε, όπως επιστολή, φωτογραφία, νόμος ή μαρτυρία.',
+    'ιστοριογραφικό κείμενο':'Κείμενο ιστορικού που μελετά και ερμηνεύει γεγονότα χρησιμοποιώντας πηγές.',
+    'κοινωνική αποτίμηση':'Εκτίμηση του τρόπου με τον οποίο μια πολιτική επηρέασε διαφορετικές κοινωνικές ομάδες.',
+    'τεκμήριο':'Συγκεκριμένο στοιχείο από μια πηγή που χρησιμοποιούμε για να στηρίξουμε μια ιστορική εξήγηση.',
+    'τεκμήρια':'Συγκεκριμένα στοιχεία από πηγές που χρησιμοποιούμε για να στηρίξουμε μια ιστορική εξήγηση.',
+    'φορολογία':'Το σύστημα φόρων που πληρώνουν πολίτες και επιχειρήσεις στο κράτος.',
+    'πτώχευση':'Στην περίπτωση κράτους, αδυναμία να πληρώσει κανονικά τα χρέη και τις οικονομικές υποχρεώσεις του.',
+    'δημοσιονομική κρίση':'Σοβαρή δυσκολία του κράτους να ισορροπήσει έσοδα, έξοδα και πληρωμές χρέους.',
+    'αιτιώδης εξήγηση':'Εξήγηση που δείχνει ποιες αιτίες οδήγησαν σε ένα αποτέλεσμα και με ποιον τρόπο.',
+    'αιτιώδεις συνδέσεις':'Σχέσεις που δείχνουν πώς μια αιτία οδηγεί ή συμβάλλει σε ένα αποτέλεσμα.',
+    'αντεπιχείρημα':'Μια διαφορετική θέση που αμφισβητεί το βασικό μας επιχείρημα και πρέπει να την εξετάσουμε.',
+    'συλλογισμός':'Η εξήγηση του πώς και γιατί τα στοιχεία μιας πηγής στηρίζουν το συμπέρασμά μας.',
+    'βιωσιμότητά της':'Η δυνατότητα μιας πολιτικής να συνεχιστεί για μεγάλο διάστημα χωρίς να εξαντληθούν οι διαθέσιμοι πόροι.',
+    'θεσμικές αλλαγές':'Αλλαγές στους κανόνες και στους οργανισμούς με τους οποίους λειτουργεί το κράτος.'
+  };
+
+  function escapeRegExp(text){return text.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')}
+  function applyGlossary(){
+    const keys=Object.keys(glossary).sort((a,b)=>b.length-a.length);
+    const pattern=new RegExp(`(?<![\\p{L}\\p{N}])(${keys.map(escapeRegExp).join('|')})(?![\\p{L}\\p{N}])`,'giu');
+    const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{acceptNode(node){
+      const parent=node.parentElement;
+      if(!parent||!node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+      if(parent.closest('script,style,textarea,select,option,input,button,.glossary-term,.term-tooltip')) return NodeFilter.FILTER_REJECT;
+      pattern.lastIndex=0;
+      return pattern.test(node.nodeValue)?NodeFilter.FILTER_ACCEPT:NodeFilter.FILTER_REJECT;
+    }});
+    const nodes=[];while(walker.nextNode())nodes.push(walker.currentNode);
+    nodes.forEach(node=>{
+      const text=node.nodeValue;pattern.lastIndex=0;let last=0,match;const fragment=document.createDocumentFragment();
+      while((match=pattern.exec(text))){
+        if(match.index>last)fragment.appendChild(document.createTextNode(text.slice(last,match.index)));
+        const shown=match[0],key=shown.toLocaleLowerCase('el-GR');
+        const term=document.createElement('span');term.className='glossary-term';term.tabIndex=0;term.dataset.definition=glossary[key];term.textContent=shown;term.setAttribute('aria-label',`${shown}: ${glossary[key]}`);fragment.appendChild(term);last=match.index+shown.length;
+      }
+      if(last<text.length)fragment.appendChild(document.createTextNode(text.slice(last)));
+      node.replaceWith(fragment);
+    });
+  }
+  function initGlossary(){
+    const tooltip=document.getElementById('termTooltip');let active=null;
+    function position(term){
+      const r=term.getBoundingClientRect();tooltip.style.left='12px';tooltip.style.top='12px';
+      const w=tooltip.offsetWidth,h=tooltip.offsetHeight;let left=r.left+r.width/2-w/2;left=Math.max(12,Math.min(left,window.innerWidth-w-12));
+      let top=r.bottom+9;if(top+h>window.innerHeight-12)top=r.top-h-9;top=Math.max(12,top);tooltip.style.left=`${left}px`;tooltip.style.top=`${top}px`;
+    }
+    function show(term){active=term;tooltip.textContent=term.dataset.definition;tooltip.classList.add('show');tooltip.setAttribute('aria-hidden','false');requestAnimationFrame(()=>position(term));}
+    function hide(){active=null;tooltip.classList.remove('show');tooltip.setAttribute('aria-hidden','true')}
+    document.addEventListener('mouseover',e=>{const t=e.target.closest&&e.target.closest('.glossary-term');if(t)show(t)});
+    document.addEventListener('mouseout',e=>{const t=e.target.closest&&e.target.closest('.glossary-term');if(t&&!t.contains(e.relatedTarget))hide()});
+    document.addEventListener('focusin',e=>{if(e.target.classList&&e.target.classList.contains('glossary-term'))show(e.target)});
+    document.addEventListener('focusout',e=>{if(e.target.classList&&e.target.classList.contains('glossary-term'))hide()});
+    document.addEventListener('click',e=>{const t=e.target.closest&&e.target.closest('.glossary-term');if(t){e.stopPropagation();show(t)}else hide()});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape')hide()});
+    window.addEventListener('resize',()=>{if(active)position(active)});window.addEventListener('scroll',()=>{if(active)position(active)},true);
+  }
+
+  function buildNav(){
+    panels.forEach((p,i)=>{
+      const b=document.createElement('button');
+      b.type='button'; b.className='stepbtn'; b.textContent=`${i+1}. ${p.dataset.title}`;
+      b.addEventListener('click',()=>showStep(i)); nav.appendChild(b);
+    });
+  }
+  function showStep(i,scroll=true){
+    state.step=Math.max(0,Math.min(i,panels.length-1));
+    panels.forEach((p,n)=>p.classList.toggle('active',n===state.step));
+    [...nav.children].forEach((b,n)=>{b.classList.toggle('active',n===state.step);b.classList.toggle('done',state.completed.includes(n));});
+    document.getElementById('prevBtn').disabled=state.step===0;
+    document.getElementById('nextBtn').disabled=state.step===panels.length-1;
+    document.getElementById('nextBtn').textContent=state.step===panels.length-2?'Συντελεστές →':'Επόμενο →';
+    saveNow(); if(scroll) window.scrollTo({top:document.querySelector('.toolbar').offsetTop,behavior:'smooth'});
+  }
+  function fieldKey(el,index){return el.id||`${el.name||el.tagName}_${index}`}
+  function collect(){
+    const els=[...document.querySelectorAll('[data-save]')];
+    const values={};
+    els.forEach((el,i)=>{
+      const key=fieldKey(el,i);
+      if(el.type==='checkbox'||el.type==='radio') values[key]=el.checked;
+      else values[key]=el.value;
+    });
+    state.values=values;
+    state.completed=panels.map((p,i)=>{
+      if(i===0) return 0;
+      const fields=[...p.querySelectorAll('[data-save]')];
+      const meaningful=fields.filter(el=>el.type==='checkbox'||el.type==='radio'?el.checked:String(el.value||'').trim().length>0);
+      return meaningful.length>=Math.min(2,fields.length)?i:null;
+    }).filter(v=>v!==null);
+  }
+  function restore(){
+    try{
+      const saved=JSON.parse(localStorage.getItem(STORAGE_KEY)||'null');
+      if(!saved) return;
+      Object.assign(state,saved);
+      const els=[...document.querySelectorAll('[data-save]')];
+      els.forEach((el,i)=>{
+        const key=fieldKey(el,i); if(!(key in state.values)) return;
+        if(el.type==='checkbox'||el.type==='radio') el.checked=!!state.values[key]; else el.value=state.values[key];
+      });
+    }catch(err){console.warn('Δεν ήταν δυνατή η επαναφορά.',err)}
+  }
+  function saveNow(){
+    collect();
+    localStorage.setItem(STORAGE_KEY,JSON.stringify(state));
+    const s=document.getElementById('saveStatus'); s.textContent='Αποθηκεύτηκε';
+    [...nav.children].forEach((b,n)=>b.classList.toggle('done',state.completed.includes(n)));
+  }
+  function scheduleSave(){
+    document.getElementById('saveStatus').textContent='Αποθήκευση…';
+    clearTimeout(saveTimer);saveTimer=setTimeout(saveNow,400);
+  }
+  function wordCount(){
+    const v=document.getElementById('finalResponse').value.trim();
+    const n=v?v.split(/\s+/).filter(Boolean).length:0;
+    document.getElementById('wordCount').textContent=`${n} ${n===1?'λέξη':'λέξεις'}`;
+  }
+  function updateRanges(){
+    const words=['πολύ μικρή','μικρή','μέτρια','μεγάλη','πολύ μεγάλη'];
+    const m=document.getElementById('modernScore'),c=document.getElementById('costScore');
+    document.getElementById('modernScoreText').textContent=`Εκτίμηση: ${words[+m.value]}.`;
+    document.getElementById('costScoreText').textContent=`Εκτίμηση: ${words[+c.value]}.`;
+  }
+  function checkCompare(){
+    const items=[...document.querySelectorAll('.compare-answer')];let correct=0,answered=0;
+    items.forEach(s=>{if(s.value)answered++;if(s.value===s.dataset.correct)correct++;});
+    const f=document.getElementById('compareFeedback');f.className='feedback show '+(correct===items.length?'good':'bad');
+    f.textContent=answered<items.length?'Συμπλήρωσε όλες τις κατατάξεις.':correct===items.length?'Πολύ καλά. Διέκρινες τις κοινές και τις συμπληρωματικές πληροφορίες.':`Σωστές ${correct} από ${items.length}. Ξανακοίτα ποιος μιλά για μακροπρόθεσμα αποτελέσματα και ποιος για την καθημερινότητα του 1890.`;
+  }
+  function checkQuiz(){
+    const items=[...document.querySelectorAll('.quiz-item')];let correct=0;
+    items.forEach(item=>{const s=item.querySelector('select');item.classList.remove('correct','incorrect');if(s.value===item.dataset.answer){item.classList.add('correct');correct++;}else if(s.value)item.classList.add('incorrect');});
+    const f=document.getElementById('quizFeedback');f.className='feedback show '+(correct===items.length?'good':'bad');f.textContent=correct===items.length?'Οι αιτιώδεις συνδέσεις είναι σωστές.':`Σωστές ${correct} από ${items.length}. Χρησιμοποίησε τις αλυσίδες πάνω από τις ερωτήσεις.`;
+  }
+  function checkCompleteness(){
+    const checks=[...document.querySelectorAll('.quality-list input')];const n=checks.filter(x=>x.checked).length;
+    const words=document.getElementById('finalResponse').value.trim().split(/\s+/).filter(Boolean).length;
+    const f=document.getElementById('completenessFeedback');
+    const ok=n===checks.length&&words>=100;
+    f.className='feedback show '+(ok?'good':'bad');
+    f.textContent=ok?'Η απάντηση έχει τα βασικά στοιχεία μιας τεκμηριωμένης ιστορικής κρίσης. Κάνε έναν τελευταίο γλωσσικό έλεγχο.':`Έχεις επιβεβαιώσει ${n}/5 κριτήρια και το τελικό κείμενο έχει ${words} λέξεις. Ενίσχυσε όσα λείπουν· το προτεινόμενο εύρος είναι 120–180 λέξεις.`;
+  }
+  function exportAnswers(){
+    collect();
+    const lines=[];
+    lines.push('ΧΑΡΙΛΑΟΣ ΤΡΙΚΟΥΠΗΣ: ΕΡΓΟ, ΠΟΛΙΤΙΚΗ ΚΑΙ ΚΟΣΤΟΣ','');
+    const labelFor=el=>{const l=document.querySelector(`label[for="${el.id}"]`);return l?l.textContent.trim():el.id||el.name||'Πεδίο'};
+    document.querySelectorAll('input[data-save],select[data-save],textarea[data-save]').forEach(el=>{
+      if(['checkbox','radio','range'].includes(el.type)) return;
+      const val=String(el.value||'').trim();if(val)lines.push(`${labelFor(el)}\n${val}\n`);
+    });
+    lines.push(`Συμβολή στον εκσυγχρονισμό: ${document.getElementById('modernScore').value}/4`,`Οικονομικό και κοινωνικό κόστος: ${document.getElementById('costScore').value}/4`);
+    const blob=new Blob([lines.join('\n')],{type:'text/plain;charset=utf-8'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='ergasia_trikoupis.txt';a.click();setTimeout(()=>URL.revokeObjectURL(url),500);
+  }
+  function preparePrint(){
+    document.getElementById('printName').textContent=document.getElementById('studentName').value||'—';
+    document.getElementById('printClass').textContent=document.getElementById('studentClass').value||'—';
+    document.getElementById('printDate').textContent=document.getElementById('studentDate').value||'—';
+    saveNow();window.print();
+  }
+
+  applyGlossary();initGlossary();buildNav();restore();showStep(state.step||0,false);wordCount();updateRanges();
+  document.querySelectorAll('[data-save]').forEach(el=>{el.addEventListener('input',scheduleSave);el.addEventListener('change',scheduleSave)});
+  document.getElementById('finalResponse').addEventListener('input',wordCount);
+  document.getElementById('modernScore').addEventListener('input',updateRanges);document.getElementById('costScore').addEventListener('input',updateRanges);
+  document.getElementById('prevBtn').addEventListener('click',()=>showStep(state.step-1));document.getElementById('nextBtn').addEventListener('click',()=>showStep(state.step+1));
+  document.getElementById('printBtn').addEventListener('click',preparePrint);document.getElementById('exportBtn').addEventListener('click',exportAnswers);
+  document.getElementById('checkCompare').addEventListener('click',checkCompare);document.getElementById('checkQuiz').addEventListener('click',checkQuiz);document.getElementById('checkCompleteness').addEventListener('click',checkCompleteness);
+  const modal=document.getElementById('resetModal');document.getElementById('resetBtn').addEventListener('click',()=>modal.classList.add('show'));document.getElementById('cancelReset').addEventListener('click',()=>modal.classList.remove('show'));modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.remove('show')});
+  document.getElementById('confirmReset').addEventListener('click',()=>{localStorage.removeItem(STORAGE_KEY);location.reload()});
+  window.addEventListener('beforeunload',saveNow);
+})();
+</script>
+</body>
+</html>
